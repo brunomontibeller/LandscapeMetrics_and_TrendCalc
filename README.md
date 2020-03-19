@@ -35,6 +35,6 @@ Note that there are several options of landscape metrics, but you should select 
 
 In order to perform the trend analysis using the landscape metrics values, a ~10 km × ~10 km fishnet (grid) covering the BLA was created using the ‘Create Fishnet’ tool in ArcMap 10.6 and saved as shp-file. We calculated landscape metrics for each fishnet tile separately using each one of the eighteen raster files of annual forest cover and each one of the seventeen raster files of annual forest loss. We created separate shp-files for every fishnet tile by using Python fiona library. Each tile had an unique ID. We clipped each tile from the input rasters by using GDAL and calculated the landscape metrics on these clipped tiles and stored the results associated with each tile together with the original ID of the tile as separate csv-files (metrics.csv). Finally, all tiles’ statistics were joined to the original fishnet attribute table by using the tile ID-s (see figure below). The script for clipping, saving and calculating the landscape metrics by tiles for a list of rasters here (link). 
 
- 
+ ![Image description](C:/Users/bruno/Dropbox/Script/scripts_git/image.png)
 
 The metrics.csv files with year, ID and landscape metric values for each fishnet tile were the input for performing Mann-Kendall trend analysis. A R script used for to calculating the Mann Kendall trend and its significance can be found here (link). 
